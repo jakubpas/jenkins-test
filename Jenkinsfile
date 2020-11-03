@@ -1,7 +1,3 @@
-#one pipeline - relase to dev;
-#second test stage prod
-
-
 pipeline {
     agent any
 
@@ -44,7 +40,5 @@ pipeline {
                 echo 'Do prod stuff'
            }
         }
-
-
     }
 }
