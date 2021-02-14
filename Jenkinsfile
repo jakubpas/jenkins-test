@@ -1,44 +1,15 @@
 pipeline {
     agent any
-
     stages {
-        stage('dev') {
+        stage("Hello") {
             steps {
-                script {
-		   echo 'do dev stuff'
-			try {
-			echo 'run tests'
-			} catch {
-			echo 'abort'
-			}
-			echo 'git checkout test';
-			echo 'git merge dev';
-                    }
-                }
+                echo "Hello from pipeline ${name}"
             }
         }
-
-        stage('test') {
+        stage("Goodbye") {
             steps {
-                script {
-                    echo 'do test stuff'
-		    git 'merge 
-
-			
-                }
+                echo "Goodbye from pipeline ${name}"
             }
-        }
-
-        stage('stage') {
-            steps {
-		echo 'Do stage stuff'
-            }
-        }
-
-	stage('prod') {
-            steps {
-                echo 'Do prod stuff'
-           }
         }
     }
 }
